@@ -1,0 +1,36 @@
+import math
+import turtle
+import random
+import sys
+turtle.shape("blank")
+screen = turtle.Screen()
+turtle.speed(int(screen.textinput("Amazing lines", "Lines speed:")))
+screen.setup(width=1000, height=900, startx=None, starty=None)
+screen.title("Amazing lines")
+while True:
+    direction=random.randrange(1,5)
+    r = random.randrange(1 , 255)
+    g = random.randrange(1 , 255)
+    b = random.randrange(1 , 255)
+    width1 = random.randrange(1 , 20)
+    ####################################
+    turtle.colormode(255)
+    turtle.color(r, g, b)
+    ####################################
+    turtle.width(width1)
+    ####################################
+
+    ###################################
+    if math.fabs(turtle.pos()[0]) > 500 or math.fabs(turtle.pos()[1]) > 500:
+        turtle.speed(100)
+        turtle.goto(0.00,0.00)
+    ###################################
+    if direction == 1:
+        turtle.forward(50)
+    elif direction == 2:
+        turtle.backward(50)
+    elif direction ==3:
+        turtle.right(50)
+    elif direction == 4:
+        turtle.left(50)
+    #####################################
